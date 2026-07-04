@@ -1,0 +1,13 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+    height: 40px;
+    background-color: aqua;
+}
+
+img{
+    height: 50px;
+}
