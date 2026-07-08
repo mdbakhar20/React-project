@@ -1,0 +1,2 @@
+export const imgBaseURL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'
+export const logoURL = 'https://ik.imagekit.io/moz3rntpv/pngtree-food-logo-png-image_8239850.png'
