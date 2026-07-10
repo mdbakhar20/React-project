@@ -1,19 +1,45 @@
-import { restaurantsArr } from "../utils/MockData";
+import { swiggyURL } from "../utils/constant";
+import { restaurantsArr } from "../utils/mockData";
 import ResturantCard from "./ResturantCard";
 import { Shimmer } from "./Shimmer";
+import { useState, useEffect } from "react";
 
-function Body() {
-    return(
-        <div className="res-container">
-            <Shimmer />
-            <div>
-                {/* {restaurantsArr.map((resObj)=>{
-                    return <ResturantCard resDetail={resObj} key = {resObj.id}/> */}
-                {/* })} */}
-            </div>
+const Body = () => {
+  const [hotelList, setHotelList] = useState(null);
 
-        </div>
-    )
-}
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const response = await fetch(swiggyURL);
+    const data = await response.json();
+    console.log(
+      data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+    );
+
+    setHotelList(
+      data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+    );
+
+    console.log("hotel list", hotelList);
+  };
+
+  if(hotelList == null){
+    return <Shimmer />
+  }
+
+  return (
+    <div className="body">
+      <div className="res-container">
+        {hotelList.map((resObj) => {
+          return (
+            <ResturantCard resDetail={resObj?.info} key={resObj?.info?.id} />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default Body;
