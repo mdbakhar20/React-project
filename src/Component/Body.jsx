@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { swiggyURL } from "../utils/constant";
 import { restaurantsArr } from "../utils/mockData";
 import ResturantCard from "./ResturantCard";
@@ -34,7 +35,9 @@ const Body = () => {
       <div className="res-container">
         {hotelList.map((resObj) => {
           return (
-            <ResturantCard resDetail={resObj?.info} key={resObj?.info?.id} />
+            <Link to={`/restaurant/${resObj?.info?.id}`} key={resObj?.info?.id} className="res-cart"> 
+             <ResturantCard resDetail={resObj?.info}  />
+            </Link>
           );
         })}
       </div>

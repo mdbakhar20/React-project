@@ -4,26 +4,28 @@ import { logoURL } from "../utils/constant"
 function Header() {
     return(
         <div className="header">
-            <div className="image-logo">
-                <img className="main-img" src="https://ik.imagekit.io/moz3rntpv/pngtree-food-logo-png-image_8239850.png"/>
-            </div>
+            <Link to={"/"}>
+                <div className="image-logo">
+                    <img className="main-img" src={logoURL}/>
+                </div>
+            </Link>
             <div className="search-bar">
                 <input placeholder="search for  resturant or food"/>
             </div>    
             <div  className="nav-items">    
                 <nav>
                     <ul>
-                        <li>
-                            <Link to={"/"}>Home</Link> 
+                        <li >
+                            <Link to={"/"} className="nav-option">Home</Link> 
                         </li>
-                        <li>
-                            <Link to={"/about"}>About us</Link>    
+                        <li  >
+                            <Link to={"/about"} className="nav-option">About us</Link>    
                         </li>
-                        <li>
-                            <Link to={"/contact"}>contact us</Link>    
+                        <li  >
+                            <Link to={"/contact"} className="nav-option">contact us</Link>    
                         </li>
-                        <li>
-                            <Link to={"/cart"}>cart</Link>    
+                        <li  >
+                            <Link to={"/cart"} className="nav-option">cart</Link>    
                         </li>
                     </ul>
                 </nav>

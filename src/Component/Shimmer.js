@@ -139,3 +139,16 @@ export const Shimmer =() =>{
     </div>
 </div>    
 )}
+
+
+export const Shimmer2 = () => {
+    return(
+        <div className="shimmer-card">
+            <div className="shimmer-img"></div>
+            <div className="shimmer-title"></div>
+            <div className="shimmer-cuisine"></div>
+            <div className="shimmer-rating"></div>
+            <div className="shimmer-delivery"></div>
+        </div>
+    )
+}

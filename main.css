@@ -41,6 +41,10 @@
 
 .nav-items nav ul li{
     padding:13px  20px;
+    border: none;
+}
+.nav-option{
+    text-decoration: none;
 }
 
 .res-container {
@@ -156,13 +160,32 @@
   margin-top: 10px;
 }
 
+.res-cart{
+    text-decoration: none;
+    color: #111827;
+}
 
 .error-div{
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(176, 176, 28);        padding: 20px;
+    background-color: #111827;  
+    padding: 20px;
+}
+.error-box{        
+    text-align: center;
+    max-width: 420px;
+    background-color: #60A5FA;
+    color:#F9FAFB;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+header1{
+      font-size: 3rem;
+         margin: 0 0 8px;
 }
 
 .footer {

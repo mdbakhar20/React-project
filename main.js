@@ -7,6 +7,10 @@ import Contact  from "./src/Component/contact";
 import Cart  from "./src/Component/cart";
 import Error from "./src/Component/error";
 import Body from "./src/Component/Body";
+import Auth from "./src/Component/Auth";
+import SignIn from "./src/Component/signIn";
+import SignUp from "./src/Component/SignUp";
+import RestaurantPage from "./src/Component/RestaurantPage";
 
 const appRouter = createBrowserRouter([
     {
@@ -28,6 +32,24 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantPage />
+      },
+      {
+        path: "/Auth",
+        element:<Auth/>,
+        children: [
+         { 
+          path: "/Auth/signIn",
+          element: <SignIn/>
+        },
+        {
+          path: "/Auth/signUp",
+          element: <SignUp/>
+        }
+        ]
       }
     ],
     errorElement: <Error />,
