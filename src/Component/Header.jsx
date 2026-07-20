@@ -1,7 +1,11 @@
 import { Link } from "react-router";
 import { logoURL } from "../utils/constant"
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 function Header() {
+
+    const isOnline = useOnlineStatus();
+
     return(
         <div className="header">
             <Link to={"/"}>
@@ -15,6 +19,15 @@ function Header() {
             <div  className="nav-items">    
                 <nav>
                     <ul>
+                        {isOnline ? (
+                            <li>
+                                <i className="fa-solid fa-signal" style={{ color: "rgb(131, 204, 42)" }}></i> online
+                            </li>
+                        ) : (
+                            <li>
+                                <i className="fa-solid fa-circle-xmark" style={{ color: "rgb(220, 38, 38)" }}></i> Offline
+                            </li>
+                        )}
                         <li >
                             <Link to={"/"} className="nav-option">Home</Link> 
                         </li>

@@ -10,7 +10,7 @@ import Body from "./src/Component/Body";
 import Auth from "./src/Component/Auth";
 import SignIn from "./src/Component/signIn";
 import SignUp from "./src/Component/SignUp";
-import RestaurantPage from "./src/Component/RestaurantPage";
+import RestaurantMenu from "./src/Component/RestaurantMenu";
 
 const appRouter = createBrowserRouter([
     {
@@ -35,7 +35,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantPage />
+        element: <RestaurantMenu />
       },
       {
         path: "/Auth",

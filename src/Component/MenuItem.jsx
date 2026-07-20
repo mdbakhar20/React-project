@@ -1,0 +1,36 @@
+import React from "react";
+import { imgBaseURL } from "../utils/constant";
+
+const MenuItem = ({ details, propData }) => {
+  console.log("details aagai", details);
+  const {
+    name,
+    price,
+    description,
+    imageId,
+    ratings,
+    finalPrice,
+    defaultPrice,
+    isVeg,
+  } = details;
+  return (
+    <div className="menu-item-card">
+      <div className="menu-item-body">
+        <h1>{name}</h1>
+        <p>Price: {price / 100 || finalPrice / 100 || defaultPrice / 100}</p>
+        <p>
+          ⭐️ {ratings.aggregatedRating.rating} (
+          {ratings.aggregatedRating.ratingCount})
+        </p>
+        <p>{description}</p>
+        <p>{propData}</p>
+      </div>
+
+      <div>
+        <img alt={name} className="menu-item-img" src={imgBaseURL + imageId} />
+      </div>
+    </div>
+  );
+};
+
+export default MenuItem;
